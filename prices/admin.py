@@ -1,3 +1,11 @@
 from django.contrib import admin
+from django.contrib.contenttypes.admin import GenericTabularInline
 
-# Register your models here.
+from prices.models import RentPriceTable, SellingPrice
+from products.models import Product
+
+
+class RentPriceTableAdmin(admin.ModelAdmin):
+    models = RentPriceTable
+
+admin.site.register(RentPriceTable, RentPriceTableAdmin)
